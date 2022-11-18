@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sirflyingv/frontend-project-44#readme",
   "dependencies": {
+    "dos2unix": "^1.1.2",
     "readline-sync": "^1.4.10"
   }
 }
