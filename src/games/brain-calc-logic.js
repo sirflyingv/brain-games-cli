@@ -24,8 +24,8 @@ export const gameLogicCalc = (valueGenerator) => {
   }
 
   console.log(`Question: ${expression}`);
-  const userAnswer = Number(readlineSync.question('Your answer: ').trim());
-  const isCorrect = userAnswer === expectedAnswer;
+  const userAnswer = readlineSync.question('Your answer: ').trim();
+  const isCorrect = Number(userAnswer) === expectedAnswer;
 
   return {
     isCorrect,
