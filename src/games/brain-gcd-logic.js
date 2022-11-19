@@ -5,8 +5,8 @@ export const rulesStr = 'Find the greates common divisor of given numbers.';
 
 // copypasta from w3school
 const gcd = (...arr) => {
-  const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
-  return [...arr].reduce((a, b) => _gcd(a, b));
+  const innerGcd = (x, y) => (!y ? x : gcd(y, x % y));
+  return [...arr].reduce((a, b) => innerGcd(a, b));
 };
 
 export const gameLogicGCD = (valueGenerator) => {
