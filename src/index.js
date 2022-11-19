@@ -17,14 +17,14 @@ function runGameRound(gameLogic, valueGenerator, playerName) {
 
   const output = gameResult.isCorrect
     ? 'Correct!'
-    : `'${gameResult.userAnswer}' is wrong answer ;(. Correct answer was '${gameResult.expectedAnswer} \n
-      Let's try again, ${playerName}!'`;
+    : `'${gameResult.userAnswer}' is wrong answer ;(. Correct answer was '${gameResult.expectedAnswer}' \n
+      Let's try again, ${playerName}!`;
 
   console.log(output);
   return gameResult.isCorrect ? 1 : 0;
 }
 
-const runGame = function (gameLogic, rulesStr) {
+export default (gameLogic, rulesStr) => {
   const name = greet();
   console.log(rulesStr);
 
@@ -34,5 +34,3 @@ const runGame = function (gameLogic, rulesStr) {
 
   console.log(`Congratulations, ${name}!`);
 };
-
-export default runGame;
