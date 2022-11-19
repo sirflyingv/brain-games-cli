@@ -8,8 +8,8 @@ function greet() {
   return name;
 }
 
-function createRandomNumber() {
-  return Math.ceil(Math.random() * 20);
+function createRandomNumber(max) {
+  return Math.ceil(Math.random() * max);
 }
 
 function runGameRound(gameLogic, valueGenerator, playerName) {
