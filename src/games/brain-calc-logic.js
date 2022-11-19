@@ -3,12 +3,13 @@ import readlineSync from 'readline-sync';
 export const rulesStr = 'What is the result of the expression?';
 
 export const gameLogicCalc = (valueGenerator) => {
-  const num1 = valueGenerator();
-  const num2 = valueGenerator();
+  const maxNumber = 20;
+  const num1 = valueGenerator(maxNumber);
+  const num2 = valueGenerator(maxNumber);
 
   let expression = '';
   let expectedAnswer = 0;
-  const operatorSeed = valueGenerator();
+  const operatorSeed = valueGenerator(20);
 
   if (operatorSeed <= 7) {
     expression = `${num1} + ${num2}`;
