@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 export const rulesStr = 'What number is missing in the progression?';
 
 export const gameLogicProgression = (valueGenerator) => {
-  const progLength = valueGenerator(5) + 5;
+  const progLength = valueGenerator(10) + 5;
   const progStart = valueGenerator(15);
   const progStep = valueGenerator(5);
   const secretIndex = valueGenerator(progLength) - 1;
@@ -13,9 +13,7 @@ export const gameLogicProgression = (valueGenerator) => {
     progression.push(progression[i - 2] + progStep);
   }
 
-  const questionStr = progression
-    .map((el, i) => (i === secretIndex ? '..' : el))
-    .join(' ');
+  const questionStr = progression.map((el, i) => (i === secretIndex ? '..' : el)).join(' ');
 
   console.log(`Question: ${questionStr}`);
 
