@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
-// import { gcd } from 'mathjs';
 
-export const rulesStr =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const rulesStr = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num % 2 === 0) return false;
