@@ -25,4 +25,4 @@
 
 ### Usage
 
-Run in terminal one of the games by name: `brain-even`, `brain-calc`, `brain-gcd`, `brain-progression` or `brain-prime`.
+Run in terminal one of the games by name: `brain-even`, `brain-calc`, `brain-gcd`, <br/> `brain-progression` or `brain-prime`.
