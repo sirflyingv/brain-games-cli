@@ -18,8 +18,7 @@ export const gameLogicCalc = (valueGenerator) => {
   if (operatorSeed > 7 && operatorSeed < 14) {
     expression = `${num1} - ${num2}`;
     expectedAnswer = num1 - num2;
-  }
-  if (operatorSeed >= 14) {
+  } else {
     expression = `${num1} * ${num2}`;
     expectedAnswer = num1 * num2;
   }
