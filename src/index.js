@@ -28,7 +28,9 @@ export default (gameLogic, rulesStr) => {
   console.log(rulesStr);
 
   while (correctAnswersCount < 3) {
-    correctAnswersCount += runGameRound(gameLogic, createRandomNumber, name);
+    const roundResult = runGameRound(gameLogic, createRandomNumber, name);
+    if (roundResult === 0) return;
+    correctAnswersCount += roundResult;
   }
 
   console.log(`Congratulations, ${name}!`);
