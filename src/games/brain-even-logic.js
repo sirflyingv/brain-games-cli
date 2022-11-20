@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
-export const rulesStr = 'Answer "yes" if number is even, otherise answer "no".';
+export const rulesStr =
+  'Answer "yes" if the number is even, otherwise answer "no".';
 
 export const gameLogicEven = (valueGenerator) => {
   const number = valueGenerator(20);
