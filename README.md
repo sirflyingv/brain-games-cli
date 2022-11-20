@@ -12,3 +12,17 @@ brain-gcd example https://asciinema.org/a/vI6XuQzACA3ksP0CrSdwP1w18
 brain-progression example https://asciinema.org/a/cGaPPOK0bVz5UY1exrkpTXzyL
 
 brain-prime example https://asciinema.org/a/SBTypAZojrkFVy3ax8FIuZV65
+
+### Installation
+
+- clone repo
+
+- run `make install`
+
+- run `make publish`
+
+- register package with `sudo npm link`
+
+### Usage
+
+Run in terminal one of the games by name: `brain-even`, `brain-calc`, `brain-gcd`, `brain-progression` or `brain-prime`.
