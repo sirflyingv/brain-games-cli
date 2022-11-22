@@ -1,12 +1,19 @@
-import createRandomNumber from '../utils/random.js';
+import random from '../utils/random.js';
 
 export const rules = 'What number is missing in the progression?';
 
+const config = {
+  minLength: 5,
+  lengthSpread: 10,
+  maxStartValue: 15,
+  maxStep: 5,
+};
+
 export const gameLogicProgression = () => {
-  const progLength = createRandomNumber(10) + 5;
-  const progStart = createRandomNumber(15);
-  const progStep = createRandomNumber(5);
-  const secretIndex = createRandomNumber(progLength) - 1;
+  const progLength = random(config.lengthSpread) + config.minLength;
+  const progStart = random(config.maxStartValue);
+  const progStep = random(config.maxStep);
+  const secretIndex = random(progLength) - 1;
   const progression = [progStart];
 
   for (let i = 2; i <= progLength; i += 1) {

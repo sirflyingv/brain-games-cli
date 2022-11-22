@@ -1,4 +1,4 @@
-import createRandomNumber from '../utils/random.js';
+import random from '../utils/random.js';
 
 export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -13,8 +13,10 @@ const isPrime = (num) => {
   return num > 1;
 };
 
+const maxNumber = 300;
+
 export const gameLogicPrime = () => {
-  const number = createRandomNumber(300);
+  const number = random(maxNumber);
 
   const question = String(number);
   const expectedAnswer = isPrime(number) ? 'yes' : 'no';
