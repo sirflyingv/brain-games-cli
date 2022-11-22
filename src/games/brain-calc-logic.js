@@ -1,35 +1,22 @@
-import readlineSync from 'readline-sync';
+import createRandomNumber from '../utils/random.js';
 
-export const rulesStr = 'What is the result of the expression?';
+export const rules = 'What is the result of the expression?';
 
-export const gameLogicCalc = (valueGenerator) => {
+export const gameLogicCalc = () => {
   const maxNumber = 20;
-  const num1 = valueGenerator(maxNumber);
-  const num2 = valueGenerator(maxNumber);
+  const num1 = createRandomNumber(maxNumber);
+  const num2 = createRandomNumber(maxNumber);
 
-  let expression = '';
+  const operators = ['+', '-', '*'];
+  const operator = operators[createRandomNumber(3) - 1];
+
+  const question = `${num1} ${operator} ${num2}`;
+
+  // Is this a legitimate case to use the blasphemous eval() function?
   let expectedAnswer = 0;
-  const operatorSeed = valueGenerator(20);
+  if (operator === '+') expectedAnswer = String(num1 + num2);
+  if (operator === '-') expectedAnswer = String(num1 - num2);
+  if (operator === '*') expectedAnswer = String(num1 * num2);
 
-  if (operatorSeed <= 7) {
-    expression = `${num1} + ${num2}`;
-    expectedAnswer = num1 + num2;
-  }
-  if (operatorSeed > 7 && operatorSeed < 14) {
-    expression = `${num1} - ${num2}`;
-    expectedAnswer = num1 - num2;
-  } else {
-    expression = `${num1} * ${num2}`;
-    expectedAnswer = num1 * num2;
-  }
-
-  console.log(`Question: ${expression}`);
-  const userAnswer = readlineSync.question('Your answer: ').trim();
-  const isCorrect = Number(userAnswer) === expectedAnswer;
-
-  return {
-    isCorrect,
-    userAnswer,
-    expectedAnswer,
-  };
+  return [question, expectedAnswer];
 };

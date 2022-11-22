@@ -1,29 +1,20 @@
-import readlineSync from 'readline-sync';
+import createRandomNumber from '../utils/random.js';
 
-export const rulesStr = 'What number is missing in the progression?';
+export const rules = 'What number is missing in the progression?';
 
-export const gameLogicProgression = (valueGenerator) => {
-  const progLength = valueGenerator(10) + 5;
-  const progStart = valueGenerator(15);
-  const progStep = valueGenerator(5);
-  const secretIndex = valueGenerator(progLength) - 1;
+export const gameLogicProgression = () => {
+  const progLength = createRandomNumber(10) + 5;
+  const progStart = createRandomNumber(15);
+  const progStep = createRandomNumber(5);
+  const secretIndex = createRandomNumber(progLength) - 1;
   const progression = [progStart];
 
   for (let i = 2; i <= progLength; i += 1) {
     progression.push(progression[i - 2] + progStep);
   }
 
-  const questionStr = progression.map((el, i) => (i === secretIndex ? '..' : el)).join(' ');
+  const question = progression.map((el, i) => (i === secretIndex ? '..' : el)).join(' ');
+  const expectedAnswer = String(progression[secretIndex]);
 
-  console.log(`Question: ${questionStr}`);
-
-  const expectedAnswer = progression[secretIndex];
-  const userAnswer = readlineSync.question('Your answer: ').trim();
-  const isCorrect = Number(userAnswer) === expectedAnswer;
-
-  return {
-    isCorrect,
-    userAnswer,
-    expectedAnswer,
-  };
+  return [question, expectedAnswer];
 };

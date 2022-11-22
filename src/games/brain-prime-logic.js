@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
+import createRandomNumber from '../utils/random.js';
 
-export const rulesStr = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num % 2 === 0) return false;
@@ -13,18 +13,11 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-export const gameLogicPrime = (valueGenerator) => {
-  const number = valueGenerator(300);
+export const gameLogicPrime = () => {
+  const number = createRandomNumber(300);
 
-  console.log(`Question: ${number}`);
-
+  const question = String(number);
   const expectedAnswer = isPrime(number) ? 'yes' : 'no';
-  const userAnswer = readlineSync.question('Your answer: ').trim();
-  const isCorrect = userAnswer === expectedAnswer;
 
-  return {
-    isCorrect,
-    userAnswer,
-    expectedAnswer,
-  };
+  return [question, expectedAnswer];
 };

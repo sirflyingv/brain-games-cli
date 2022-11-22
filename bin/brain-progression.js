@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import {
-  gameLogicProgression,
-  rulesStr,
-} from '../src/games/brain-progression-logic.js';
+import { gameLogicProgression, rules } from '../src/games/brain-progression-logic.js';
 
-runGame(gameLogicProgression, rulesStr);
+runGame(gameLogicProgression, rules);
