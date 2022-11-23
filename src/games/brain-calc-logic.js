@@ -9,7 +9,7 @@ export const gameLogicCalc = () => {
   const num2 = random(maxNumber);
 
   const operators = ['+', '-', '*'];
-  const operator = operators[random(3) - 1];
+  const operator = operators[random(operators.length) - 1];
 
   const question = `${num1} ${operator} ${num2}`;
 
