@@ -21,7 +21,7 @@ export const gameLogicProgression = () => {
   }
 
   const question = progression.map((el, i) => (i === secretIndex ? '..' : el)).join(' ');
-  const expectedAnswer = String(progression[secretIndex]);
+  const expectedAnswer = progression[secretIndex];
 
   return [question, expectedAnswer];
 };

@@ -15,7 +15,7 @@ export const gameLogicGCD = () => {
   const num2 = random(maxNumber);
 
   const question = `${num1} ${num2}`;
-  const expectedAnswer = String(gcd(num1, num2));
+  const expectedAnswer = gcd(num1, num2);
 
   return [question, expectedAnswer];
 };

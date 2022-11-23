@@ -12,7 +12,7 @@ export default (getGameRoundData, rules) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ').trim();
 
-    if (userAnswer !== expectedAnswer) {
+    if (userAnswer !== String(expectedAnswer)) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
