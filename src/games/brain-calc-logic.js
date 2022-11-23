@@ -13,11 +13,7 @@ export const gameLogicCalc = () => {
 
   const question = `${num1} ${operator} ${num2}`;
 
-  // Is this a legitimate case to use the blasphemous eval() function?
-  let expectedAnswer = 0;
-  if (operator === '+') expectedAnswer = String(num1 + num2);
-  if (operator === '-') expectedAnswer = String(num1 - num2);
-  if (operator === '*') expectedAnswer = String(num1 * num2);
-
-  return [question, expectedAnswer];
+  if (operator === '+') return [question, num1 + num2];
+  if (operator === '-') return [question, num1 - num2];
+  return [question, num1 * num2];
 };
