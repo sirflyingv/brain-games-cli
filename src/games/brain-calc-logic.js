@@ -13,8 +13,7 @@ export const gameLogicCalc = () => {
 
   const question = `${num1} ${operator} ${num2}`;
 
-  // if (operator === '+') return [question, num1 + num2];
-  // if (operator === '-') return [question, num1 - num2];
-  // eslint-disable-next-line no-eval
-  return [question, eval(question)];
+  if (operator === '+') return [question, num1 + num2];
+  if (operator === '-') return [question, num1 - num2];
+  return [question, num1 * num2];
 };
