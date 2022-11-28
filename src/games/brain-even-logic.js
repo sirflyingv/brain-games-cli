@@ -6,7 +6,7 @@ const maxNumber = 20;
 
 const isEven = (number) => Math.abs(number % 2 === 0);
 
-export const gameLogicEven = () => {
+export const generateBrainEvenGameRoundData = () => {
   const number = random(maxNumber);
   const question = String(number);
   const expectedAnswer = isEven(number) ? 'yes' : 'no';

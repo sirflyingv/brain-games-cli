@@ -15,7 +15,7 @@ const isPrime = (num) => {
 
 const maxNumber = 300;
 
-export const gameLogicPrime = () => {
+export const generateBrainPrimeGameRoundData = () => {
   const number = random(maxNumber);
 
   const question = String(number);

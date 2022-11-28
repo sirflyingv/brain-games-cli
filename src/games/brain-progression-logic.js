@@ -9,7 +9,7 @@ const config = {
   maxStep: 5,
 };
 
-export const gameLogicProgression = () => {
+export const generateBrainProgressionGameRoundData = () => {
   const progLength = random(config.lengthSpread) + config.minLength;
   const progStart = random(config.maxStartValue);
   const progStep = random(config.maxStep);

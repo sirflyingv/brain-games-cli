@@ -10,7 +10,7 @@ const gcd = (num1, num2) => {
 
 const maxNumber = 100;
 
-export const gameLogicGCD = () => {
+export const generateBrainGCDGameRoundData = () => {
   const num1 = random(maxNumber);
   const num2 = random(maxNumber);
 

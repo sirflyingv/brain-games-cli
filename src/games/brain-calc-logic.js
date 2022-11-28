@@ -4,7 +4,7 @@ export const rules = 'What is the result of the expression?';
 
 const maxNumber = 20;
 
-export const gameLogicCalc = () => {
+export const generateBrainCalcGameRoundData = () => {
   const num1 = random(maxNumber);
   const num2 = random(maxNumber);
 
@@ -13,7 +13,17 @@ export const gameLogicCalc = () => {
 
   const question = `${num1} ${operator} ${num2}`;
 
-  if (operator === '+') return [question, num1 + num2];
-  if (operator === '-') return [question, num1 - num2];
-  return [question, num1 * num2];
+  switch (operator) {
+    case '+':
+      return [question, num1 + num2];
+
+    case '-':
+      return [question, num1 - num2];
+
+    case '*':
+      return [question, num1 * num2];
+
+    default:
+      throw new Error(`Unknown operator: ${operator}`);
+  }
 };

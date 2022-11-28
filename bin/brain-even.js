@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 import runGame from '../src/index.js';
-import { gameLogicEven, rules } from '../src/games/brain-even-logic.js';
+import { generateBrainEvenGameRoundData, rules } from '../src/games/brain-even-logic.js';
 
-runGame(gameLogicEven, rules);
+runGame(generateBrainEvenGameRoundData, rules);
